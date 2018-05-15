@@ -1,0 +1,36 @@
+﻿@model IEnumerable<GigHub.Models.GigsSearch>
+
+@{
+    ViewBag.Title = "Search";
+}
+<h2 class="text-white">Search</h2>
+
+
+<div class="jumbotron">
+    <div style="margin-top: 40px; margin-bottom:30px">
+        @using (Ajax.BeginForm(
+            new AjaxOptions
+            {
+                HttpMethod = "get",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "GigsSearch"
+            }))
+        {
+
+            <div class="row">
+                @*<div class="col-lg-3"></div>*@
+                <div class="col-lg-3">
+                    <input type="search" name="searchTerm" class="form-control" />
+                </div>
+                <div class="col-lg-3">
+                    <input type="submit" value="Search By Name" class="btn btn-danger" />
+                </div>
+            </div>
+
+
+        }
+
+        @Html.Partial("_gigsSearchView", Model)
+    </div>
+
+</div>

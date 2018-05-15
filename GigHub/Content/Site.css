@@ -1,6 +1,15 @@
-﻿body {
+﻿html {
+    overflow-y: scroll;
+}
+
+body {
     padding-top: 90px;
     padding-bottom: 20px;
+    background: url("img/4.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -30,13 +39,33 @@ span.field-validation-error {
     font-weight: bold;
 }
 
-.voffset { margin-top: 2px;}
-.voffset1 { margin-top: 5px;}
-.voffset2 { margin-top: 10px;}
-.voffset3 { margin-top: 20px;}
-.voffset4 { margin-top: 40px;}
-.voffset5 { margin-top: 80px;}
+.voffset {
+    margin-top: 2px;
+}
 
+.voffset1 {
+    margin-top: 5px;
+}
+
+.voffset2 {
+    margin-top: 10px;
+}
+
+.voffset3 {
+    margin-top: 20px;
+}
+
+.voffset4 {
+    margin-top: 40px;
+}
+
+.voffset5 {
+    margin-top: 80px;
+}
+
+.voffsetCenter {
+    margin-top: 10em;
+}
 
 /* Bootstrap Ovverride */
 
@@ -62,14 +91,30 @@ span.field-validation-error {
 
 
 .btn {
-    /*font-size: 17px;
-    padding: 7px 20px;*/
     -ms-border-radius: 9px;
     border-radius: 9px;
 }
 
 
 /*Page-level styles*/
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    border-width: 3px;
+}
+
+.text-white {
+    color: white;
+}
+
+.jumbotron {
+    background-color: white;
+}
+
 .gigs {
     list-style: none;
 }
@@ -117,3 +162,474 @@ span.field-validation-error {
                 font-size: 20px;
                 padding: 6px 12px;
             }
+
+.img {
+    border-radius: 4px;
+}
+.priblizi{
+        -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -moz-box-shadow: 1px 1px 1px 0px transparent;
+    -webkit-box-shadow: 1px 1px 1px 0px transparent;
+    box-shadow: 1px 1px 1px 0px transparent;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+}
+
+
+.priblizi:hover {
+    -webkit-box-shadow: 15px 15px 20px crimson;
+    -moz-box-shadow: 15px 15px 20px crimson;
+    box-shadow: 15px 15px 20px crimson;
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    transform: scale(1.04);
+    transition: all 0.5s linear;
+}
+
+/*Audio Section*/
+audio:hover, audio:focus, audio:active {
+    -webkit-box-shadow: 15px 15px 20px crimson;
+    -moz-box-shadow: 15px 15px 20px crimson;
+    box-shadow: 15px 15px 20px crimson;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+audio {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -moz-box-shadow: 2px 2px 4px 0px crimson;
+    -webkit-box-shadow: 2px 2px 4px 0px crimson;
+    box-shadow: 2px 2px 4px 0px crimson;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+}
+
+/*Iphone Model*/
+
+.iphone {
+    box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #999, 0 0 30px 0px crimson;
+    border: 5px solid #d9dbdc;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 50px;
+    height: 877px;
+    width: 423px;
+    position: relative;
+    margin: 30px auto;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.iphone-top {
+    padding: 5px 110px 40px;
+    position: relative;
+}
+
+    .iphone-top .speaker {
+        display: block;
+        width: 70px;
+        height: 6px;
+        margin: 0 auto;
+        border-radius: 6px;
+        background: #292728;
+    }
+
+    .iphone-top .camera {
+        display: block;
+        margin: 0 auto;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        margin-bottom: 13px;
+        background: #333;
+    }
+
+    .iphone-top .sensor {
+        display: block;
+        width: 15px;
+        height: 15px;
+        float: left;
+        background: #333;
+        margin-top: -5px;
+        border-radius: 50%;
+    }
+
+.top-bar, .bottom-bar {
+    display: block;
+    width: 423px;
+    height: 15px;
+    border-left: 5px solid #BBB;
+    border-right: 5px solid #BBB;
+    position: absolute;
+    left: -5px;
+}
+
+.top-bar {
+    top: 65px;
+}
+
+.bottom-bar {
+    bottom: 65px;
+}
+
+.iphone-screen {
+    background: #eee;
+    border: 1px solid #fff;
+    height: 677px;
+    width: 375px;
+    margin: 0 auto;
+    border: 2px solid rgba(0, 0, 0, 0.9);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+    .iphone-screen img {
+        width: 100%;
+    }
+
+.buttons .on-off, .buttons .up, .buttons .down, .buttons .sleep {
+    display: block;
+    background: #CCC;
+    position: absolute;
+    border-radius: 2px 0px 0px 2px;
+}
+
+.buttons .on-off {
+    height: 40px;
+    width: 3px;
+    top: 100px;
+    left: -8px;
+}
+
+.buttons .up, .buttons .down, .buttons .sleep {
+    height: 60px;
+    width: 5px;
+    left: -10px;
+}
+
+.buttons .up {
+    top: 170px;
+}
+
+.buttons .down {
+    top: 250px;
+}
+
+.buttons .sleep {
+    left: auto;
+    right: -10px;
+    top: 170px;
+    border-radius: 0px 2px 2px 0px;
+}
+
+.iphone-bottom {
+    padding: 10px 0 0;
+}
+
+    .iphone-bottom span {
+        display: block;
+        margin: 0 auto;
+        width: 68px;
+        height: 68px;
+        background: #ccc;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);
+        position: relative;
+    }
+
+        .iphone-bottom span:after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+        }
+
+
+.phone-block {
+    height: 50em;
+    margin-top: 10%;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    text-align: center;
+    position: center;
+}
+
+
+
+/*Material Design Cards*/
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+
+
+
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+}
+
+
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.card-link:hover {
+    text-decoration: none;
+}
+
+.card-link + .card-link {
+    margin-left: 1.25rem;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+    .card-header:first-child {
+        border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    }
+
+    .card-header + .list-group .list-group-item:first-child {
+        border-top: 0;
+    }
+
+.card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+    .card-footer:last-child {
+        border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+    }
+
+.card-header-tabs {
+    margin-right: -0.625rem;
+    margin-bottom: -0.75rem;
+    margin-left: -0.625rem;
+    border-bottom: 0;
+}
+
+.card-header-pills {
+    margin-right: -0.625rem;
+    margin-left: -0.625rem;
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: calc(0.25rem - 1px);
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-img-bottom {
+    width: 100%;
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+}
+
+.card-deck {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+    .card-deck .card {
+        margin-bottom: 15px;
+    }
+
+@media (min-width: 576px) {
+    .card-deck {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+        .card-deck .card {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1 0 0%;
+            flex: 1 0 0%;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            margin-right: 15px;
+            margin-bottom: 0;
+            margin-left: 15px;
+        }
+}
+
+.card-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+    .card-group > .card {
+        margin-bottom: 15px;
+    }
+
+@media (min-width: 576px) {
+    .card-group {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+
+        .card-group > .card {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 0 0%;
+            flex: 1 0 0%;
+            margin-bottom: 0;
+        }
+
+            .card-group > .card + .card {
+                margin-left: 0;
+                border-left: 0;
+            }
+
+            .card-group > .card:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+                .card-group > .card:first-child .card-img-top,
+                .card-group > .card:first-child .card-header {
+                    border-top-right-radius: 0;
+                }
+
+                .card-group > .card:first-child .card-img-bottom,
+                .card-group > .card:first-child .card-footer {
+                    border-bottom-right-radius: 0;
+                }
+
+            .card-group > .card:last-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+                .card-group > .card:last-child .card-img-top,
+                .card-group > .card:last-child .card-header {
+                    border-top-left-radius: 0;
+                }
+
+                .card-group > .card:last-child .card-img-bottom,
+                .card-group > .card:last-child .card-footer {
+                    border-bottom-left-radius: 0;
+                }
+
+            .card-group > .card:only-child {
+                border-radius: 0.25rem;
+            }
+
+                .card-group > .card:only-child .card-img-top,
+                .card-group > .card:only-child .card-header {
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                }
+
+                .card-group > .card:only-child .card-img-bottom,
+                .card-group > .card:only-child .card-footer {
+                    border-bottom-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                }
+
+            .card-group > .card:not(:first-child):not(:last-child):not(:only-child) {
+                border-radius: 0;
+            }
+
+                .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
+                .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
+                .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header,
+                .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer {
+                    border-radius: 0;
+                }
+}
+
+.card-columns .card {
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: 1.25rem;
+        -moz-column-gap: 1.25rem;
+        column-gap: 1.25rem;
+    }
+
+        .card-columns .card {
+            display: inline-block;
+            width: 100%;
+        }
+}

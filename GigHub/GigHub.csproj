@@ -210,12 +210,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
+    <Compile Include="Controllers\FolloweesController.cs" />
     <Compile Include="Controllers\FollowingController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ParticipanceController.cs" />
     <Compile Include="Dtos\AttendanceDto.cs" />
     <Compile Include="Dtos\FollowingDto.cs" />
+    <Compile Include="Dtos\ParticipanceDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,6 +254,10 @@
     <Compile Include="Migrations\201803311721545_Followers.Designer.cs">
       <DependentUpon>201803311721545_Followers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804171717025_Add_Participance.cs" />
+    <Compile Include="Migrations\201804171717025_Add_Participance.Designer.cs">
+      <DependentUpon>201804171717025_Add_Participance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -259,7 +266,9 @@
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\GigsSearch.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Participance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
@@ -278,6 +287,55 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\44.jpg" />
+    <Content Include="Content\img\45.jpg" />
+    <Content Include="Content\img\46.jpg" />
+    <Content Include="Content\img\avatar03.jpg" />
+    <Content Include="Content\img\avatar04.jpg" />
+    <Content Include="Content\img\avatarpng.png" />
+    <Content Include="Content\img\avatarpng2.png" />
+    <Content Include="Content\img\best.jpg" />
+    <Content Include="Content\img\icons\png\Book.png" />
+    <Content Include="Content\img\icons\png\Calendar.png" />
+    <Content Include="Content\img\icons\png\Chat.png" />
+    <Content Include="Content\img\icons\png\Clipboard.png" />
+    <Content Include="Content\img\icons\png\Compas.png" />
+    <Content Include="Content\img\icons\png\Gift-Box.png" />
+    <Content Include="Content\img\icons\png\Infinity-Loop.png" />
+    <Content Include="Content\img\icons\png\Mail.png" />
+    <Content Include="Content\img\icons\png\Map.png" />
+    <Content Include="Content\img\icons\png\Pensils.png" />
+    <Content Include="Content\img\icons\png\phone.png" />
+    <Content Include="Content\img\icons\png\Pocket.png" />
+    <Content Include="Content\img\icons\png\Retina-Ready.png" />
+    <Content Include="Content\img\icons\png\Toilet-Paper.png" />
+    <Content Include="Content\img\icons\png\Watches.png" />
+    <Content Include="Content\img\icons\png\_notes\dwsync.xml" />
+    <Content Include="Content\img\icons\svg\book.svg" />
+    <Content Include="Content\img\icons\svg\calendar.svg" />
+    <Content Include="Content\img\icons\svg\chat.svg" />
+    <Content Include="Content\img\icons\svg\clipboard.svg" />
+    <Content Include="Content\img\icons\svg\clocks.svg" />
+    <Content Include="Content\img\icons\svg\compas.svg" />
+    <Content Include="Content\img\icons\svg\gift-box.svg" />
+    <Content Include="Content\img\icons\svg\loop.svg" />
+    <Content Include="Content\img\icons\svg\mail.svg" />
+    <Content Include="Content\img\icons\svg\map.svg" />
+    <Content Include="Content\img\icons\svg\paper-bag.svg" />
+    <Content Include="Content\img\icons\svg\pencils.svg" />
+    <Content Include="Content\img\icons\svg\retina.svg" />
+    <Content Include="Content\img\icons\svg\ribbon.svg" />
+    <Content Include="Content\img\icons\svg\toilet-paper.svg" />
+    <Content Include="Content\img\icons\svg\_notes\dwsync.xml" />
+    <Content Include="Content\img\4.jpg" />
+    <Content Include="Content\img\avatar01.jpg" />
+    <Content Include="Content\img\avatar02.jpg" />
+    <Content Include="Content\img\bands\1.jpg" />
+    <Content Include="Content\img\bands\2.jpg" />
+    <Content Include="Content\img\blur.jpg" />
+    <Content Include="Content\img\blur2.jpg" />
+    <Content Include="Content\img\img_avatar3.png" />
+    <Content Include="Content\music\neffex.mp3" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -293,6 +351,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -312,8 +372,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\Gigs.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -336,6 +394,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Gigs\Create.cshtml" />
+    <Content Include="Views\Followees\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\_gigsSearchView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803311721545_Followers.resx">
       <DependentUpon>201803311721545_Followers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171717025_Add_Participance.resx">
+      <DependentUpon>201804171717025_Add_Participance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

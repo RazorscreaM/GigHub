@@ -15,12 +15,14 @@ namespace GigHub.Controllers
         {
             _context = new ApplicationDbContext();
         }
+        [Authorize]
         public ActionResult Index()
         {
             var upcomingGigs = _context.Gigs
                 .Include(g => g.Artist)
                 .Include(g => g.Genre)
-                .Where(g => g.DateTime > DateTime.Now);
+                .Where(g => g.DateTime > DateTime.Now)
+                .OrderByDescending(g => g.ArtistId);
   
 
             var viewModel = new GigsViewModel
@@ -40,11 +42,29 @@ namespace GigHub.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        [Authorize]
+        public ActionResult Search(string searchTerm = null)
         {
-            ViewBag.Message = "Your contact page.";
+            var gigsFromDb = _context.Gigs
+                .OrderByDescending(d => d.DateTime)
+                .Where(r => searchTerm == null || r.Artist.Name.StartsWith(searchTerm))
+                .Take(10)
+                .Skip(0)
+                .Select(r => new GigsSearch
+                {
+                    DateTime = r.DateTime,
+                    Genre = r.Genre,
+                    ArtistName = r.Artist.Name
+                });
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_gigsSearchView", gigsFromDb);
+            }
 
-            return View();
+            return (View(gigsFromDb));
+
+
+
         }
     }
 }

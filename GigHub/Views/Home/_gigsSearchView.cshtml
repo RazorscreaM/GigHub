@@ -1,0 +1,17 @@
+﻿@model IEnumerable<GigHub.Models.GigsSearch>
+
+    <div id="postList">
+        @foreach (var item in Model)
+        {
+            <div>
+                <h4>Date:  @item.DateTime</h4>
+                <h5>Artist : @item.ArtistName</h5>
+                @*<h5>Genre : @item.Genre</h5>*@
+                <hr style="border-width: 15px"/>
+            </div>
+        }
+
+
+
+    </div>
+

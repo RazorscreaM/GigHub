@@ -17,17 +17,14 @@ namespace GigHub.Controllers
             _context = new ApplicationDbContext();
         }
         [HttpPost]
-        public IHttpActionResult Attend(AttendanceDto dto) //check not url but body for id
+        public IHttpActionResult Attend(AttendanceDto dto)
         {
 
             var userId = User.Identity.GetUserId();
 
             //Check for existing attendance
-            if (_context.Attendances
-                .Any(a => a.AttendeeId == userId && a.GigId == dto.GigId))
-            {
+            if (_context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == dto.GigId))
                 return BadRequest("Attendance already exists");
-            }
 
             var attendance = new Attendance
             {
